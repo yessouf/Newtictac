@@ -1,10 +1,15 @@
 body {
   padding: 10px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: #3498db;
   background-image: url(/images/landmark.png);
   background-repeat:no-repeat;
   background-position: bottom bottom;
+  background: rgb(30,87,153); /* Old browsers */
+background: -moz-linear-gradient(top,  rgb(30,87,153) 0%, rgb(41,137,216) 50%, rgb(32,124,202) 51%, rgb(125,185,232) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgb(30,87,153) 0%,rgb(41,137,216) 50%,rgb(32,124,202) 51%,rgb(125,185,232) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgb(30,87,153) 0%,rgb(41,137,216) 50%,rgb(32,124,202) 51%,rgb(125,185,232) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
+
 }
 
 a {
@@ -34,4 +39,26 @@ a {
 h3 {
   color: white;
   margin-left: 300px;
+}
+
+.home{
+  width: 75%;
+  display: flex;
+  justify-content: center;
+  padding-top: 70px;
+}
+
+.light{
+  padding: 30px;
+  color: white;
+  margin: 0;
+
+}
+
+.pad{
+  width: 75%;
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+
 }

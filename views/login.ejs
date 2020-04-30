@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,15 +20,52 @@
         <div class="end">
             <p>Connection</p>
             <p>My last trips</p>
-        </div>
+    </div>
       </nav>
      
 </div>
 
 </div>
 
-<!--sing-in  -->
-    <div class="col-12 col-sm-6 text-center"></div>
+<div class="home">
+
+    <div class="row">
+
+      <div class="col-12 text-center get_started">
+      </div>
+
+      <!-- SIGN UP AREA -->
+      <div class="col-12 col-sm-6 text-center">
+
+        <div class="formArea">
+          <h4 class="titleForm">Sign Up</h4>
+
+          <form action="/users/sign-up" method="POST">
+            <div class="form-group">
+              <label for="exampleInputUsername">name</label>
+              <input name="usernameFromFront" type="text" class="form-control" placeholder="Enter name">
+            </div>
+            <div class="form-group">
+                <label for="FirstName">FirstName</label>
+                <input name="usernameFromFront" type="text" class="form-control" placeholder="Enter FirstName">
+              </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email</label>
+              <input name="emailFromFront" type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input name="passwordFromFront" type="password" class="form-control"  placeholder="Enter password">
+            </div>
+
+            <button type="submit" class="btn btn-danger">Submit</button>
+          </form>
+        </div>
+
+      </div>
+
+      <!-- SIGN IN AREA -->
+      <div class="col-12 col-sm-6 text-center">
 
         <div class="formArea">
 
@@ -45,10 +81,20 @@
               <input name="passwordFromFront" type="password" class="form-control" placeholder="Enter password">
             </div>
 
-            <button type="submit" class="btn btn-info">Submit</button>
+            <button type="submit" class="btn btn-danger">Submit</button>
           </form>
 
         </div>
+
+      </div>
+
+    </div>
+  </div>
+
+
+
+
+
 
 
 
@@ -63,6 +109,15 @@
     </div>
  
     
+
+
+
+
+
+
+
+
+
 
 
 
