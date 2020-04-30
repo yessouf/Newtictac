@@ -1,81 +1,26 @@
 var express = require('express');
 var router = express.Router();
-
-
+var request = require('sync-request');
+var userModel = require('../models/users')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('login',);
 });
 
-router.get('/homepage', async function(req, res, next){
+router.get('/homePage', async function(req, res, next){
   if(req.session.user == null){
     res.redirect('/')
   } else {
     
-
-    res.render('homepage', )
+    res.render('homePage', )
   }
-})
-
-router.get('/homepage', function(req, res, next) {
-  res.render('homepage',);
 });
 
+
+
+
 /*
-router.post('/signin', async function(req,res,next){
-
-  var searchUser = await userModel.findOne({
-    email: req.body.emailFromFront,
-    password: req.body.passwordFromFront
-  })
-
-  if(searchUser!= null){
-    req.session.user = {
-      name: searchUser.username,
-      id: searchUser._id
-    }
-    res.redirect('/homepage')
-  } else {
-    res.render('login')
-  }
-
-  
-})
-
-
-router.post('/signup', async function(req,res,next){
-
-  var searchUser = await userModel.findOne({
-    email: req.body.emailFromFront
-  })
-  
-  if(!searchUser){
-    var newUser = new userModel({
-      username: req.body.usernameFromFront,
-      email: req.body.emailFromFront,
-      password: req.body.passwordFromFront,
-    })
-  
-    var newUserSave = await newUser.save();
-  
-    req.session.user = {
-      name: newUserSave.username,
-      id: newUserSave._id,
-    }
-  
-    console.log(req.session.user)
-  
-    res.redirect('/homepage')
-  } else {
-    res.redirect('/')
-  }
-  
-})
-
-
-
-
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
