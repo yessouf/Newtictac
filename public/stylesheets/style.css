@@ -1,5 +1,5 @@
 body {
-  padding: 10px;
+  padding: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-image: url(/images/landmark.png);
   background-repeat:no-repeat;
@@ -31,6 +31,9 @@ a {
     display: flex;
 }
 
+.navbar{
+  width: 100em;
+}
 .one {
   display: flex;
  
@@ -56,9 +59,14 @@ h3 {
 }
 
 .pad{
-  width: 75%;
+  width: 60em;
   display: flex;
   justify-content: center;
   padding-top: 10px;
 
+}
+
+.container-fluid{
+  width: 100em;
+  padding: 0;
 }
