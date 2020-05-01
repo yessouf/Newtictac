@@ -41,16 +41,12 @@ a {
  
 }
 
-h3 {
-  color: white;
-  margin-left: 300px;
-}
-
 .home{
   width: 75%;
   display: flex;
   justify-content: center;
   padding-top: 70px;
+  margin: 0;
 }
 
 .light{
@@ -69,6 +65,17 @@ h3 {
 }
 
 .container-fluid{
-  width: 95em;
+  width: 100em;
   padding: 0;
+}
+
+.new{
+  display: flex;
+  justify-content: center;
+  padding:  15px;
+}
+
+.centre{
+  display: flex;
+  justify-content: center;
 }
