@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+<<<<<<< HEAD
 
 const mongoose = require('mongoose');
 
@@ -45,6 +46,14 @@ router.get('/', function(req, res, next) {
 
 router.get('/homepage', function(req, res, next) {
   res.render('homepage',);
+=======
+var request = require('sync-request');
+var userModel = require('../models/users')
+
+/* GET home page. */
+router.get('/', function(req, res, next) {
+  res.render('login',);
+>>>>>>> login
 });
 
 /*
