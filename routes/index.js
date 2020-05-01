@@ -1,7 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var request = require('sync-request');
-var userModel = require('../models/users')
+var userModel = require('../models/users');
+var journeyModel = require('../models/journey');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -12,28 +13,48 @@ router.get('/homePage', async function(req, res, next){
   if(req.session.user == null){
     res.redirect('/')
   } else {
-    
-    res.render('homePage', )
+    var journeyList = await journeyModel.find();
+
+    res.render('homePage', {journeyList} )
   }
 });
 
 
+/*router.post('/ticket-check', async function(req, res, next) {
+  var
+  var searchjourney = await journeyModel.findOne({
+    email: req.body.emailFromFront
+  })
+  
+  if(!searchUser){
+    var newUser = new userModel({
+      name: req.body.nameFromFront,
+      email: req.body.emailFromFront,
+      password: req.body.passwordFromFront,
+    })
+  
+    var newUserSave = await newUser.save();
+  
+    req.session.user = {
+      name: newUserSave.name,
+      id: newUserSave._id,
+    }
+  
+    console.log(req.session.user)
+  
+    res.redirect('/homePage')
+  } else {
+    res.redirect('/')
+  }
+  
+})
 
 
-/*
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+
+  res.render('ticket', );
 });
 
-
-
-
-
-
-
 */
-
-
 
 // Remplissage de la base de donnée, une fois suffit
 router.get('/save', async function(req, res, next) {
