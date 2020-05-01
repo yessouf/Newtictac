@@ -8,6 +8,23 @@ router.get('/', function(req, res, next) {
   res.render('login',);
 });
 
+router.get('/homePage', async function(req, res, next){
+  if(req.session.user == null){
+    res.redirect('/')
+  } else {
+    
+    res.render('homePage', )
+  }
+});
+
+
+
+
+/*
+router.get('/', function(req, res, next) {
+  res.render('index', { title: 'Express' });
+});*/
+
 
 
 // Remplissage de la base de donnée, une fois suffit
