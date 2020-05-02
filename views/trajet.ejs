@@ -17,7 +17,7 @@
                   <h5>Ticketac</h5>
                 </a>
                 <div class="end">
-                    <p class="rouge">Connection</p>
+                    <p class="rouge">Déconnexion</p>
                     <div class="end">
                       <a href="/lastTrip"><p>My last trips</p></a>
                   </div>
@@ -36,6 +36,7 @@
             <th scope="col">Date</th>
             <th scope="col">Departure time</th>
             <th scope="col">Price</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -48,6 +49,7 @@
             <td><%=trajet[i].date%></td>
             <td><%=trajet[i].departureTime%></td>
             <td><%=trajet[i].price%></td>
+            <td><button type="button" class="btn btn-danger">Supp</button></td>
           </tr>
           
           <%
@@ -59,6 +61,7 @@
             <td></td>
             <td></td>
             <td><%=total%>€</td>
+            <td></td>
           </tr>
           <tr class="table-borderless">
             <th scope="row"></th>
