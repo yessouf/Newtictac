@@ -10,7 +10,11 @@ router.get('/', function(req, res, next) {
 
 
 
-
+/*router.get('/lastTrip', function(req, res, next) {
+  
+  
+  res.render('lastTrip',);
+});*/
 
 
 
@@ -63,5 +67,7 @@ router.post('/inscription', async function(req,res,next){
   }
   
 })
+
+
 
 module.exports = router;

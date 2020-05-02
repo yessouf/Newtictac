@@ -31,34 +31,17 @@
             <h5 class="light">Tickets available on 02/08</h5>
             <table class="table table-borderless">
                 <tbody>
-                  <tr class="table-light">
-                    <td>Paris/Lille</td>
-                    <td>train departure at: 15:pm</td>
-                    <td>93€</td>
-                    <td><button type="button" class="btn btn-danger">OK</button></td>
-                  </tr>
+                  <%for(var i =0; i<journey.length;i++){%>
+                   <tr class="table-light">
+                      <td><%=journey[i].departure%>/<%=journey[i].arrival%></td>
+                      <td><%=journey[i].departureTime%></td>
+                      <td><%=journey[i].price%></td>
+                      <td><button type="button" class="btn btn-danger">OK</button></td>
+                    </tr>
+
+                 <%}%>
+                  
                 
-                </tbody>
-              </table>
-              <table class="table table-borderless">
-                <tbody>
-                  <tr class="table-light">
-                    <td>Paris/Lille</td>
-                    <td>train departure at: 15:pm</td>
-                    <td>93€</td>
-                    <td><button type="button" class="btn btn-danger">OK</button></td>
-                  </tr>
-                
-                </tbody>
-              </table>
-              <table class="table table-borderless">
-                <tbody>
-                  <tr class="table-light">
-                    <td>Paris/Lille</td>
-                    <td>train departure at: 15:pm</td>
-                    <td>93€</td>
-                    <td><button type="button" class="btn btn-danger">OK</button></td>
-                  </tr>
                 </tbody>
               </table>
               </div>
