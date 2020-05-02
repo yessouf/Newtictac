@@ -4,57 +4,52 @@ var request = require('sync-request');
 var userModel = require('../models/users');
 var journeyModel = require('../models/journey');
 
+
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('login',);
 });
 
+
 router.get('/homePage', async function(req, res, next){
   if(req.session.user == null){
     res.redirect('/')
   } else {
-    var journeyList = await journeyModel.find();
+    
 
-    res.render('homePage', {journeyList} )
+    res.render('homePage', )
   }
 });
 
 
-/*router.post('/ticket-check', async function(req, res, next) {
-  var
-  var searchjourney = await journeyModel.findOne({
-    email: req.body.emailFromFront
+
+router.post('/ticket', async function(req, res, next) {
+
+  var journey = await journeyModel.find({
+    departure: req.body.departureFromFront,
+    arrival: req.body.arrivalFromFront,
   })
-  
-  if(!searchUser){
-    var newUser = new userModel({
-      name: req.body.nameFromFront,
-      email: req.body.emailFromFront,
-      password: req.body.passwordFromFront,
-    })
-  
-    var newUserSave = await newUser.save();
-  
-    req.session.user = {
-      name: newUserSave.name,
-      id: newUserSave._id,
-    }
-  
-    console.log(req.session.user)
-  
-    res.redirect('/homePage')
+   console.log(journey)
+  if(journey[0] != null){
+   res.render('ticket', {journey} )
   } else {
-    res.redirect('/')
+    res.render('erreur')
   }
-  
 })
 
+ router.get('ticket', function(req,res, next){
+
+  res.render('ticket')
+ })
+
+/*var journeyList = await journeyModel.find({
+  departure: req.body.departureFromFront,
+  arrival: req.body.arrivalFromFront,
+})*/
 
 
-  res.render('ticket', );
-});
 
-*/
 
 // Remplissage de la base de donnée, une fois suffit
 router.get('/save', async function(req, res, next) {
