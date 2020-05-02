@@ -18,11 +18,11 @@
         <div class="row">
             <nav class="navbar navbar-light bg-light col-12 text-align" >
                 <a class="navbar-brand" href="#">
-                  <img src="/images/train.png" width="20" height="20" alt="">
+                  <img src="/images/train.png" width="30" height="30" alt="">
                   <h5>Ticketac</h5>
                 </a>
                 <div class="end">
-                   <p>Connection</p> 
+                    <p class="rouge">Connection</p>
                     <div class="end">
                     <a href="/users/lastTrip"><p>My last trips</p></a>
                   </div>
@@ -34,36 +34,50 @@
         </div>
        <h5 class="light text-center">One-way ticket :</h5>
         
-<div class="container-fluid">
+<div class="container-fluid col-12">
 
-        <div class="home">
-        
-            <div class="offset-lg-2 row col-6 text-center">
-        
-        
-        
+       <div class="centre text-center">
+   
+         <!-- SIGN UP AREA -->
+         <div class="new">
+   
+               
+         <input name="nameFromFront" type="text" class="form-control" placeholder="From: Paris,Mrseille...">
              
-              <div class=" col-lg-6 text-center">
+   
+         </div>
+   
+         <!-- SIGN IN AREA -->
+         <div class=" new">
+          <input name="emailFromFront" type="email" class="form-control" aria-describedby="emailHelp" placeholder="To: Lille, Nantes...">
+         </div>
+
+         <div class="new">
+            <button type="button" class="btn btn-danger">Go</button>
+  
+        </div>
+ 
+   
+       </div>
+       </div>
+     
+   
+   
         
-                <div class="formArea">
         
-                  <h4 class="titleForm"></h4>
         
-                  <form action="/ticket" method="POST">
-                    <div class="form-group">
-                      <input name="departureFromFront" type="text" class="form-control" placeholder="From: Paris, Marseille...">
-                    </div>
-                    <div class="form-group">
-                      <input name="arrivalFromFront" type="text" class="form-control" placeholder="To: Lille, Nantes...">
-                    </div>
-                    <button type="submit" class="btn btn-danger">Submit</button>
         
-                  </form>
         
-                </div>
         
-              </div>
-              </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
             </div>
          
             
