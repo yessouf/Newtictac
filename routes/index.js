@@ -3,7 +3,6 @@ var router = express.Router();
 var request = require('sync-request');
 var userModel = require('../models/users');
 var journeyModel = require('../models/journey');
-var trajet = []
 
 
 /* GET home page. */
@@ -12,12 +11,12 @@ router.get('/', function(req, res, next) {
 });
 
 
-router.get('/homePage', async function(req, res, next){
+router.get('/homePage',  function(req, res, next){
   if(req.session.user == null){
     res.redirect('/')
   } else {
     
-
+    
     res.render('homePage', )
   }
 });
@@ -60,19 +59,36 @@ router.post('/ticket', async function(req, res, next) {
 
 
 
-router.get('/trajet', async function(req, res, next){
-  
-  
-  trajet.push({
+router.get('/trajet', function(req, res, next){
+    if(req.session.trajet != null){
+      req.session.trajet.push({
+        departure:req.query.departure,
+        arrival:req.query.arrival,
+        date: req.query.date,
+        departureTime: req.query.departureTime,
+        price: req.query.price})
+      res.render('trajet', {trajet:req.session.trajet})
+    } else {
+    req.session.trajet = []
+      
+    req.session.trajet.push({
     departure:req.query.departure,
     arrival:req.query.arrival,
     date: req.query.date,
     departureTime: req.query.departureTime,
     price: req.query.price
+    })
 
-  })
+    res.render('trajet',{trajet :req.session.trajet} )
+    }
+}
+);
 
-  res.render('trajet',{trajet} )
+
+router.get('/lastTrip', function(req, res, next){
+
+trajet = req.session.trajet
+res.render('lastTrip', {trajet : req.session.trajet})
 })
 
 

@@ -59,7 +59,7 @@ router.post('/inscription', async function(req,res,next){
       id: newUserSave._id,
     }
   
-    console.log(req.session.user)
+    
   
     res.redirect('/homePage')
   } else {
@@ -67,7 +67,10 @@ router.post('/inscription', async function(req,res,next){
   }
   
 })
-
-
+/*
+router.get('deco', async function(req, res, next){
+  req.session.user == null
+  res.redirect('login')
+})*/
 
 module.exports = router;
