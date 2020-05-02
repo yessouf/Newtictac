@@ -17,7 +17,7 @@
                   <h5>Ticketac</h5>
                 </a>
                 <div class="end">
-                    <p class="rouge">Déconnexion</p>
+                  <a href="/deco"><p class="rouge">Déconnexion</p></a>
                     <div class="end">
                       <a href="/lastTrip"><p>My last trips</p></a>
                   </div>
@@ -44,12 +44,12 @@
           var total =0; 
           for(var i =0; i<trajet.length;i++){%>
             <tr class="table-light">
-            <th scope="row"><%=i%></th>
+            <th scope="row"><%=i+1%></th>
             <td><%=trajet[i].departure%>/<%=trajet[i].arrival%></td>
             <td><%=trajet[i].date%></td>
             <td><%=trajet[i].departureTime%></td>
             <td><%=trajet[i].price%></td>
-            <td><button type="button" class="btn btn-danger">Supp</button></td>
+            <td><a href="delete?position=<%i%>"><button type="button" class="btn btn-danger">Supp</button></a></td>
           </tr>
           
           <%
@@ -68,7 +68,7 @@
             <td></td>
             <td></td>
             <td></td>
-            <td><button type="submit" class="btn btn-danger">confirm</button></td>
+           <td><a href="popup"><button type="submit" class="btn btn-danger">confirm</button></a> </td>
           </tr>
           
         </tbody>

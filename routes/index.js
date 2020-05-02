@@ -10,6 +10,11 @@ router.get('/', function(req, res, next) {
   res.render('login',);
 });
 
+router.get('/deco',  function(req, res, next){
+  
+  res.render('login')
+})
+
 
 
 router.get('/homePage',  function(req, res, next){
@@ -47,6 +52,7 @@ router.post('/ticket', async function(req, res, next) {
   var journey = await journeyModel.find({
     departure: req.body.departureFromFront,
     arrival: req.body.arrivalFromFront,
+    //date: req.body.dateFromFront
   })
    console.log(journey)
   if(journey[0] != null){
@@ -92,6 +98,18 @@ trajet = req.session.trajet
 res.render('lastTrip', {trajet : req.session.trajet})
 })
 
+router.get('/popup', function(req, res, next){
+
+  res.render('popup')
+})
+
+
+router.get('/delete', function(req, res, next){
+  travel = req.session.trajet
+  travel.splice(req.query.position,1)
+
+  res.render('trajet', {trajet : req.session.trajet})
+})
 
 
 

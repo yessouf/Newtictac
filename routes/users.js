@@ -70,8 +70,8 @@ router.post('/inscription', async function(req,res,next){
 
 
 router.get('/deco',  function(req, res, next){
-  req.session.user == null
-  res.redirect('login')
+  
+  res.render('login')
 })
 
 
