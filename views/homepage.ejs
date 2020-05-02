@@ -36,25 +36,24 @@
         
 <div class="container-fluid col-12">
 
-       <div class="centre text-center">
+       
+       
+       <form action="/ticket" method="POST">
+              <div class="centre text-center">
+                
+        
+            <div class="new">
+              <input name="departureFromFront" type="text" class="form-control" placeholder="From: Paris, Marseille...">
+            </div>
    
-         <!-- SIGN UP AREA -->
-         <div class="new">
-   
-               
-         <input name="nameFromFront" type="text" class="form-control" placeholder="From: Paris,Mrseille...">
-             
-   
-         </div>
-   
-         <!-- SIGN IN AREA -->
+        
          <div class=" new">
-          <input name="emailFromFront" type="email" class="form-control" aria-describedby="emailHelp" placeholder="To: Lille, Nantes...">
+          <input name="arrivalFromFront" type="text" class="form-control" placeholder="To: Lille, Nantes...">
          </div>
 
          <div class="new">
-            <button type="button" class="btn btn-danger">Go</button>
-  
+            <button type="submit" class="btn btn-danger">Go</button>
+          </form>
         </div>
  
    
