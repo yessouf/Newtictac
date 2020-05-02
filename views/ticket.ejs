@@ -26,25 +26,27 @@
               </nav>
         </div>
     </div>
-
-        <div class="larg">
-            <h5 class="light">Tickets available on 02/08</h5>
-            <table class="table table-borderless">
+    <h5 class="new-light">Tickets available on 02/08</h5>
+    <%for(var i =0; i<journey.length;i++){%>
+    <div class="container-fluid col-6">
+        <div class="new-area">
+            <table class="table table-bordered" class="rounded">
                 <tbody>
-                  <%for(var i =0; i<journey.length;i++){%>
                    <tr class="table-light">
                       <td><%=journey[i].departure%>/<%=journey[i].arrival%></td>
-                      <td><%=journey[i].departureTime%></td>
+                      <td>train departure at : <%=journey[i].departureTime%></td>
                       <td><%=journey[i].price%></td>
                       <td><button type="button" class="btn btn-danger">OK</button></td>
                     </tr>
-
-                 <%}%>
+                 
                   
                 
                 </tbody>
               </table>
+             
               </div>
+            </div>
+            <%}%>
 
 
 
