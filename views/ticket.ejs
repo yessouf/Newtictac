@@ -29,6 +29,7 @@
 
         <div class="larg">
             <h5 class="light">Tickets available on 02/08</h5>
+            
             <table class="table table-borderless">
                 <tbody>
                   <%for(var i =0; i<journey.length;i++){%>
@@ -36,9 +37,9 @@
                       <td><%=journey[i].departure%>/<%=journey[i].arrival%></td>
                       <td><%=journey[i].departureTime%></td>
                       <td><%=journey[i].price%></td>
-                      <td><button type="button" class="btn btn-danger">OK</button></td>
+                      <td><a href="/trajet?departure=<%=journey[i].departure%>&arrival=<%=journey[i].arrival%>&date=<%=journey[i].date%>&departureTime=<%=journey[i].departureTime%>&price=<%=journey[i].price%>" class="btn btn-danger">OK</button></a></td> 
                     </tr>
-
+                 
                  <%}%>
                   
                 

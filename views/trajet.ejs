@@ -39,26 +39,26 @@
           </tr>
         </thead>
         <tbody>
+          <%
+          var total =0; 
+          for(var i =0; i<trajet.length;i++){%>
             <tr class="table-light">
             <th scope="row">1</th>
-            <td>Paris/Lile</td>
-            <td>02/06/2019</td>
-            <td>15:00pm</td>
-            <td>234</td>
+            <td><%=trajet[i].departure%>/<%=trajet[i].arrival%></td>
+            <td><%=trajet[i].date%></td>
+            <td><%=trajet[i].departureTime%></td>
+            <td><%=trajet[i].price%></td>
           </tr>
-          <tr class="table-light">
-            <th scope="row">2</th>
-            <td>Paris/Lile</td>
-            <td>02/06/2019</td>
-            <td>15:00pm</td>
-            <td>125</td>
-          </tr>
+          
+          <%
+          total += trajet[i].price * 1;
+          }%>
           <tr class="table-danger">
             <th scope="row">Total</th>
             <td></td>
             <td></td>
             <td></td>
-            <td>200</td>
+            <td><%=total%>€</td>
           </tr>
           <tr class="table-borderless">
             <th scope="row"></th>
@@ -67,6 +67,7 @@
             <td></td>
             <td><button type="submit" class="btn btn-danger">confirm</button></td>
           </tr>
+          
         </tbody>
       </table>
     </div>
