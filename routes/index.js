@@ -3,7 +3,7 @@ var router = express.Router();
 var request = require('sync-request');
 var userModel = require('../models/users');
 var journeyModel = require('../models/journey');
-
+var trajet = []
 
 
 /* GET home page. */
@@ -23,6 +23,24 @@ router.get('/homePage', async function(req, res, next){
 });
 
 
+/*router.post('/ticket', async function(req, res, next) {
+
+  var journeyList = await journeyModel.find()
+
+  for (var i =0; i<journeyList; i++){
+    if(req.body.departureFromFront.toLowerCase() && req.body.arrivalFromFront.toLowerCase() ==
+    journeyList[i].departure.toLowerCase() && journeyList[i].arrival.toLowerCase()){
+      var journey = []
+      journey.push(journey[i])
+    
+    }
+  }
+ 
+  res.render("ticket", {journey})
+}
+)
+ */
+ 
 
 router.post('/ticket', async function(req, res, next) {
 
@@ -32,23 +50,30 @@ router.post('/ticket', async function(req, res, next) {
   })
    console.log(journey)
   if(journey[0] != null){
+    
    res.render('ticket', {journey} )
   } else {
     res.render('erreur')
   }
+  
 })
 
- router.get('ticket', function(req,res, next){
-
-  res.render('ticket')
- })
-
-/*var journeyList = await journeyModel.find({
-  departure: req.body.departureFromFront,
-  arrival: req.body.arrivalFromFront,
-})*/
 
 
+router.get('/trajet', async function(req, res, next){
+  
+  
+  trajet.push({
+    departure:req.query.departure,
+    arrival:req.query.arrival,
+    date: req.query.date,
+    departureTime: req.query.departureTime,
+    price: req.query.price
+
+  })
+
+  res.render('trajet',{trajet} )
+})
 
 
 // Remplissage de la base de donnée, une fois suffit
