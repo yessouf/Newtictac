@@ -11,6 +11,7 @@ router.get('/', function(req, res, next) {
 });
 
 
+
 router.get('/homePage',  function(req, res, next){
   if(req.session.user == null){
     res.redirect('/')
@@ -90,6 +91,8 @@ router.get('/lastTrip', function(req, res, next){
 trajet = req.session.trajet
 res.render('lastTrip', {trajet : req.session.trajet})
 })
+
+
 
 
 // Remplissage de la base de donnée, une fois suffit
