@@ -46,7 +46,7 @@
             <tr class="table-light">
             <th scope="row"><%=i+1%></th>
             <td><%=trajet[i].departure%>/<%=trajet[i].arrival%></td>
-            <td><%=trajet[i].date%></td>
+            <td><%= dateFormat(trajet[i].date)%></td>
             <td><%=trajet[i].departureTime%></td>
             <td><%=trajet[i].price%></td>
             <td><a href="delete?position=<%i%>"><button type="button" class="btn btn-danger">Supp</button></a></td>
