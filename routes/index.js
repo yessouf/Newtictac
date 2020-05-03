@@ -49,6 +49,8 @@ router.get('/homePage',  function(req, res, next){
 
 router.post('/ticket', async function(req, res, next) {
 
+  
+  
   var journey = await journeyModel.find({
     departure: req.body.departureFromFront,
     arrival: req.body.arrivalFromFront,

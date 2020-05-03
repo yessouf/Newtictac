@@ -33,9 +33,9 @@
             <table class="table table-bordered" class="rounded">
                 <tbody>
                    <tr class="table-light">
-                      <td><%=journey[i].departure%>/<%=journey[i].arrival%></td>
+                      <td>Departure:<%=journey[i].departure%>/Arrival:<%=journey[i].arrival%></td>
                       <td>train departure at : <%=journey[i].departureTime%></td>
-                      <td><%=journey[i].price%></td>
+                      <td><%=journey[i].price%>€</td>
                       <td><a href="/trajet?position=<%i%>&&departure=<%=journey[i].departure%>&arrival=<%=journey[i].arrival%>&date=<%=journey[i].date%>&departureTime=<%=journey[i].departureTime%>&price=<%=journey[i].price%>" class="btn btn-danger">OK</button></a></td>
                     </tr>
                  
