@@ -4,6 +4,8 @@ var request = require('sync-request');
 var userModel = require('../models/users');
 var journeyModel = require('../models/journey');
 
+var city = ["Paris","Marseille","Nantes","Lyon","Rennes","Melun","Bordeaux","Lille"]
+var date = ["2018-11-20","2018-11-21","2018-11-22","2018-11-23","2018-11-24"]
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -49,14 +51,21 @@ router.get('/homePage',  function(req, res, next){
 
 router.post('/ticket', async function(req, res, next) {
 
+  var userJourney = {
+    departure: req.body.departureFromFront.charAt(0).toUpperCase() + 
+    req.body.departureFromFront.slice(1),
+    arrival: req.body.arrivalFromFront.charAt(0).toUpperCase() + 
+    req.body.arrivalFromFront.slice(1),}
+    
   
-  
+
+
   var journey = await journeyModel.find({
-    departure: req.body.departureFromFront,
-    arrival: req.body.arrivalFromFront,
+    departure: userJourney.departure,
+    arrival: userJourney.arrival,
     //date: req.body.dateFromFront
   })
-   console.log(journey)
+ 
   if(journey[0] != null){
     
    res.render('ticket', {journey} )
