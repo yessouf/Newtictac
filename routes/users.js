@@ -10,15 +10,11 @@ router.get('/', function(req, res, next) {
 
 
 
-/*router.get('/lastTrip', function(req, res, next) {
-  
-  
-  res.render('lastTrip',);
-});*/
-
 
 
 router.post('/login', async function(req,res,next){
+
+  req.session.trajet = []
 
   var searchUser = await userModel.findOne({
     email: req.body.emailFromFront,
@@ -71,7 +67,7 @@ router.post('/inscription', async function(req,res,next){
 
 router.get('/deco',  function(req, res, next){
   
-  res.render('login')
+  res.redirect('login')
 })
 
 

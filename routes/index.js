@@ -4,7 +4,7 @@ var request = require('sync-request');
 var userModel = require('../models/users');
 var journeyModel = require('../models/journey');
 
-var city = ["Paris","Marseille","Nantes","Lyon","Rennes","Melun","Bordeaux","Lille"]
+/*var city = ["Paris","Marseille","Nantes","Lyon","Rennes","Melun","Bordeaux","Lille"]*/
 var date = ["2018-11-20","2018-11-21","2018-11-22","2018-11-23","2018-11-24"]
 
 /* GET home page. */
@@ -20,6 +20,8 @@ router.get('/deco',  function(req, res, next){
 
 
 router.get('/homePage',  function(req, res, next){
+  
+  
   if(req.session.user == null){
     res.redirect('/')
   } else {
@@ -51,20 +53,24 @@ router.get('/homePage',  function(req, res, next){
 
 router.post('/ticket', async function(req, res, next) {
 
+ 
   var userJourney = {
     departure: req.body.departureFromFront.charAt(0).toUpperCase() + 
     req.body.departureFromFront.slice(1),
     arrival: req.body.arrivalFromFront.charAt(0).toUpperCase() + 
-    req.body.arrivalFromFront.slice(1),}
+    req.body.arrivalFromFront.slice(1),
+    date: req.body.date}
+
     
-  
+   
 
 
   var journey = await journeyModel.find({
     departure: userJourney.departure,
     arrival: userJourney.arrival,
-    //date: req.body.dateFromFront
+    date: userJourney.date
   })
+ console.log(journey.date)
  
   if(journey[0] != null){
     
@@ -87,7 +93,7 @@ router.get('/trajet', function(req, res, next){
         price: req.query.price})
       res.render('trajet', {trajet:req.session.trajet})
     } else {
-    req.session.trajet = []
+   
       
     req.session.trajet.push({
     departure:req.query.departure,
@@ -110,7 +116,7 @@ res.render('lastTrip', {trajet : req.session.trajet})
 })
 
 router.get('/popup', function(req, res, next){
-
+  trajet = req.session.trajet
   res.render('popup')
 })
 
