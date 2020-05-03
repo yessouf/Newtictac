@@ -10,7 +10,6 @@ background: -moz-linear-gradient(top,  rgb(118,219,237) 0%, rgb(79,133,187) 72%,
 background: -webkit-linear-gradient(top,  rgb(118,219,237) 0%,rgb(79,133,187) 72%,rgb(79,133,187) 100%); /* Chrome10-25,Safari5.1-6 */
 background: linear-gradient(to bottom,  rgb(118,219,237) 0%,rgb(79,133,187) 72%,rgb(79,133,187) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#76dbed', endColorstr='#4f85bb',GradientType=0 ); /* IE6-9 */
-
 }
 
 a {
